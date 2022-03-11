@@ -13,3 +13,23 @@
   margin: 0 auto;
   padding-top: 200px;
 }
+
+.generator {
+  background: #fdbb2d;
+  border-radius: 3px;
+  box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.2);
+  padding: 20px;
+}
+
+.generator__header {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.generator__password {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 13px 10px;
+  color: #fff;
+  height: 46px;
+  margin-bottom: 15px;
+}
