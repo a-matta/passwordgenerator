@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const SearchWeather = () => {
   const [search, setSearch] = useState("London");
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
   const [input, setInput] = useState("");
   let componentMounted = true;
 
@@ -13,17 +13,16 @@ const SearchWeather = () => {
       );
       if (componentMounted) {
         setData(await response.json());
-        console.log(data);
       }
       return () => {
         componentMounted = false;
       };
     };
     fetchWeather();
-  }, []);
+  }, [search]);
   let emoji = null;
   if (typeof data.main != "undefined") {
-    if (data.weather[0].main == "Clouds") {
+    if (data.weather[0].main == "Cloudy") {
       emoji = "fa-cloud";
     } else if (data.weather[0].main == "Thunderstrom") {
       emoji = "fa-bolt";
@@ -44,18 +43,34 @@ const SearchWeather = () => {
   let temp_min = (data.main.temp_min - 273.15).toFixed(2);
   let temp_max = (data.main.temp_max - 273.15).toFixed(2);
 
+  let d = new Date();
+  let date = d.getDate();
+  let year = d.getFullYear();
+  let month = d.toLocaleString("default", { month: "long" });
+  let day = d.toLocaleString("default", { weekday: "long" });
+
+  let time = d.toLocaleString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSearch(input);
+  };
   return (
     <div>
-      <div className="container mt-5">
+      <div className="container mt-5 justify-content-center ">
         <div className="row justify-content-center">
-          <div className="col-md-4">
-            <div className="bg-dark text-white border-0">
+          <div className="col-md-4 justify-content-center">
+            <div className="bg-dark text-white border-0 justify-content-center">
               <img
-                src="https://source.unsplash.com/600x900/?nature,water"
+                src={`https://source.unsplash.com/600x900/?nature`}
                 alt="..."
                 className="card-img"
               />
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="input-group mb-4 w-75 mx-auto bg-opacity-50 py-3">
                   <input
                     type="search"
@@ -63,6 +78,10 @@ const SearchWeather = () => {
                     placeholder="Search city"
                     aria-label="Search city"
                     aria-describedby="basic-addon2"
+                    name="search"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    required
                   />
                   <button
                     type="submit"
@@ -75,7 +94,12 @@ const SearchWeather = () => {
               </form>
               <div className="bg-dark bg-opacity-50 py-3 "></div>
               <h5 className="card-title">{data.name}</h5>
-              <p class="card-text lead">Saturday, 12 March,2022</p>
+              <p className="card-text lead">
+                {day}, {month}
+                {date},{year}
+                <br />
+                {time}
+              </p>
               <hr />
               <i className={`fas {emoji}fa-4x`}></i>
               <h1 className="fw-bolder mb-5">{data.weather[0].main} &deg;C</h1>
