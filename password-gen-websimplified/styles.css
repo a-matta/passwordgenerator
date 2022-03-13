@@ -1,5 +1,9 @@
 body {
-  background-color: #333;
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
   margin: 0;
   color: white;
   min-height: 100vh;
@@ -10,7 +14,7 @@ body {
 }
 
 .container {
-  background-color: #006699;
+  background-color: #833ab4;
   padding: 3rem;
   border-radius: 1rem;
   border: 2px solid black;
@@ -34,7 +38,7 @@ body {
   text-align: center;
 }
 
-label {
+.label {
   font-weight: bold;
 }
 
