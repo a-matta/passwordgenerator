@@ -8,32 +8,35 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Password Generator</h1>
-      <h3>password</h3>
+    <div class="character-amount-container">
+      <h1 class="title">Password Generator</h1>
+      <h3 class="password-display">password</h3>
       <form class="form">
-        <label htmlFor="characterAmountRange">Number of Characters</label>
-        <input
-          type="range"
-          id="characterAmountRange"
-          min="1"
-          max="50"
-          value="10"
-        />
-        <input
-          type="number"
-          id="characterAmountRange"
-          min="1"
-          max="50"
-          value="10"
-        />
+        <label htmlFor="characterAmountNumber">Number of Characters</label>
+        <div>
+          <input
+            type="range"
+            id="characterAmountNumber"
+            min="1"
+            max="50"
+            value="10"
+          />
+          <input
+            class="number-input"
+            type="number"
+            id="characterAmountRange"
+            min="1"
+            max="50"
+            value="10"
+          />
+        </div>
         <label htmlFor="includeUppercase">Include Uppercase</label>
         <input type="checkbox" id="includeUppercase" />
         <label htmlFor="includeNumbers">Include Numbers</label>
         <input type="checkbox" id="includeNumbers" />
         <label htmlFor="includeSymbols">Include Symbols</label>
         <input type="checkbox" id="includeSymbols" />
-        <button type="submit">Generate Password</button>
+        <button type="submit" class="btn">Generate Password</button>
       </form>
     </div>
   </body>
