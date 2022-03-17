@@ -53,15 +53,15 @@ function generatePassword(
 }
 
 function arrayFromLowToHigh(low, high) {
-  const array = [];
+  const array = []
   for (let i = low; i <= high; i++) {
-    array.push(i);
+    array.push(i)
   }
-  return array;
+  return array
 }
 
 function syncCharacterAmount(e) {
-  const value = e.target.value;
-  characterAmountNumber.value = value;
-  characterAmountRange.value = value;
+  const value = e.target.value
+  characterAmountNumber.value = value
+  characterAmountRange.value = value
 }
