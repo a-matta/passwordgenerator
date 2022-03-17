@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "sourceMap": true,
+
+    "skipLibCheck": true,
+
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es5",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}

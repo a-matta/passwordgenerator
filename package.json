@@ -1,0 +1,15 @@
+{
+  "name": "password-gengerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc -w --preserveWatchOutput"
+  },
+  "author": "Amrita Matta",
+  "devDependencies": {
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
+  }
+}
