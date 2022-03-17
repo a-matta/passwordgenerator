@@ -1,4 +1,4 @@
-# This is Buisness College,Helsinki TYPESCRIPT assignment made by my team.
+# This is Buisness College, Helsinki TYPESCRIPT assignment made by my team.
 
 npm run build
 open in index.html
