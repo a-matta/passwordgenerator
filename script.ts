@@ -53,10 +53,10 @@ function arrayFromLowToHigh(low: number, high: number) {
   }
   return array;
 }
-
 function syncCharacterAmount(event: Event) {
   const a = event.target as HTMLInputElement;
   const value = a.value;
   characterAmountNumber.value = value;
   characterAmountRange.value = value;
 }
+
