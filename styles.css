@@ -1,20 +1,16 @@
 body {
-  background: linear-gradient(
-    0deg,
-    rgb(66, 34, 195, 39%) 0%,
-    rgb(211, 45, 253, 40%) 100%
-  );
+  background: linear-gradient(0deg, rgb(66, 34, 195, 39%) 0%, rgb(211, 45, 253, 40%) 100%);
   margin: 0;
   color: white;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .container {
-  background-color: #833ab4;
+  background-color: #863bb8;
   padding: 3rem;
   border-radius: 1rem;
   border: 2px solid black;
